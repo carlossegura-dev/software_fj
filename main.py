@@ -68,10 +68,12 @@ def main() -> None:
     g.intentar("12. Reserva fallida: duración fuera de rango (sala 12 h)",
                lambda: reservar_y_procesar(ana, sala, 12))
 
-    equipo.disponible = False
+    if equipo:
+        equipo.disponible = False
     g.intentar("13. Reserva fallida: servicio no disponible",
                lambda: reservar_y_procesar(luis, equipo, 5))
-    equipo.disponible = True
+    if equipo:
+        equipo.disponible = True
 
     def cancelar_y_reconfirmar():
         reserva = Reserva(ana, equipo, 24)
