@@ -36,3 +36,5 @@ class OperacionNoPermitidaError(SoftwareFJError):
 
 class CalculoInconsistenteError(SoftwareFJError):
     """El cálculo de un costo produjo un resultado inconsistente."""
+class ClienteDuplicadoError(SoftwareFJError):
+    """Ya existe un cliente registrado con el mismo documento."""
