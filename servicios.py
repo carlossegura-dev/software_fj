@@ -64,6 +64,10 @@ class Servicio(Entidad):
             calcular_costo(2, 0.19, 0.10) -> (base - descuento) + impuesto
         """
         self.validar_parametros(duracion)
+        if (not isinstance(impuesto, (int, float))
+            
+                or not isinstance(descuento, (int, float))):
+            raise CalculoInconsistenteError("Impuesto y descuento deben ser numéricos.")
         if not 0 <= impuesto <= 1:
             raise CalculoInconsistenteError(f"Impuesto fuera de rango (0-1): {impuesto}")
         if not 0 <= descuento <= 1:
