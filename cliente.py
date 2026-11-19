@@ -6,6 +6,8 @@ from entidad import Entidad
 from excepciones import ClienteInvalidoError, ParametroFaltanteError
 
 _PATRON_CORREO = re.compile(r"^[\w.+-]+@[\w-]+(\.[\w-]+)+$")
+_PATRON_NOMBRE = re.compile(
+    r"^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+(?:[ '\-][A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)*$")
 
 
 class Cliente(Entidad):
@@ -34,8 +36,9 @@ class Cliente(Entidad):
     def nombre(self, valor: str) -> None:
         if not isinstance(valor, str) or len(valor.strip()) < 3:
             raise ClienteInvalidoError("El nombre debe tener al menos 3 caracteres.")
-        if any(ch.isdigit() for ch in valor):
-            raise ClienteInvalidoError("El nombre no puede contener números.")
+        if not _PATRON_NOMBRE.match(valor.strip()):
+            raise ClienteInvalidoError(
+                "El nombre solo puede tener letras, espacios, guiones y apóstrofes.")
         self._nombre = valor.strip().title()
 
     # --- documento ---
