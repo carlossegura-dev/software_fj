@@ -30,6 +30,8 @@ def main() -> None:
     g.intentar("3. Registrar cliente inválido (correo mal formado)",
                lambda: registrar_cliente("Carlos Ruiz", "123456789",
                                          "carlos-sin-arroba", "3001112233"))
+    g.intentar("4. Registrar cliente con parámetros faltantes",
+               lambda: registrar_cliente("Marta Díaz", "55667788"))                                     
     g.intentar("4b. Registrar cliente duplicado (mismo documento de Ana)",
                lambda: registrar_cliente("Ana P", "1002345678",
                                          "otra@correo.com", "3001234567"))
