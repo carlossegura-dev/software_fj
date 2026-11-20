@@ -1,47 +1,49 @@
-2026-11-19 20:33:28 | INFO     | === Inicio de la simulación de Software FJ ===
-2026-11-19 20:33:28 | INFO     | Cliente registrado: Ana Pérez
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 1. Registrar cliente válido (Ana Pérez)
-2026-11-19 20:33:28 | INFO     | Cliente registrado: Luis Gómez
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 2. Registrar cliente válido (Luis Gómez)
-2026-11-19 20:33:28 | ERROR    | 3. Registrar cliente inválido (correo mal formado) -> ClienteInvalidoError: Correo inválido: 'carlos-sin-arroba'
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 3. Registrar cliente inválido (correo mal formado)
-2026-11-19 20:33:28 | ERROR    | 4b. Registrar cliente duplicado (mismo documento de Ana) -> ClienteDuplicadoError: Ya existe un cliente con el documento 1002345678.
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 4b. Registrar cliente duplicado (mismo documento de Ana)
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 5. Crear servicio válido: sala de juntas
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 6. Crear servicio válido: alquiler de portátil
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 7. Crear servicio válido: asesoría senior
-2026-11-19 20:33:28 | ERROR    | 8. Crear servicio inválido (tarifa negativa) -> ServicioInvalidoError: La tarifa por hora debe ser un número positivo.
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 8. Crear servicio inválido (tarifa negativa)
-2026-11-19 20:33:28 | ERROR    | 9. Crear servicio inválido (nivel de asesoría inexistente) -> ServicioInvalidoError: Nivel inválido 'maestro'. Use: junior, senior, experto.
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 9. Crear servicio inválido (nivel de asesoría inexistente)
-2026-11-19 20:33:28 | INFO     | Servicio registrado: Sala Innovación
-2026-11-19 20:33:28 | INFO     | Servicio registrado: Portátil Pro
-2026-11-19 20:33:28 | INFO     | Servicio registrado: Asesoría Cloud
-2026-11-19 20:33:28 | INFO     | Reserva #10 creada (cliente=Ana Pérez, servicio=Sala Innovación, 3h)
-2026-11-19 20:33:28 | INFO     | Reserva #10 confirmada
-2026-11-19 20:33:28 | INFO     | Reserva #10 procesada. Total: $205,275.00
-2026-11-19 20:33:28 | INFO     | Fin del intento de procesamiento de la reserva #10
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 10. Reserva exitosa: Ana reserva la sala 3 h
-2026-11-19 20:33:28 | INFO     | Reserva #11 creada (cliente=Luis Gómez, servicio=Asesoría Cloud, 2h)
-2026-11-19 20:33:28 | INFO     | Reserva #11 confirmada
-2026-11-19 20:33:28 | INFO     | Reserva #11 procesada. Total: $289,170.00
-2026-11-19 20:33:28 | INFO     | Fin del intento de procesamiento de la reserva #11
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 11. Reserva exitosa con 10 % de descuento: Luis, asesoría 2 h
-2026-11-19 20:33:28 | ERROR    | 12. Reserva fallida: duración fuera de rango (sala 12 h) -> ReservaError: No se pudo crear la reserva: Una sala se reserva entre 1 y 8 horas.
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 12. Reserva fallida: duración fuera de rango (sala 12 h)
-2026-11-19 20:33:28 | ERROR    | 13. Reserva fallida: servicio no disponible -> ServicioNoDisponibleError: El servicio 'Portátil Pro' no está disponible.
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 13. Reserva fallida: servicio no disponible
-2026-11-19 20:33:28 | INFO     | Reserva #14 creada (cliente=Ana Pérez, servicio=Portátil Pro, 24h)
-2026-11-19 20:33:28 | INFO     | Reserva #14 cancelada
-2026-11-19 20:33:28 | ERROR    | 14. Operación no permitida: confirmar una reserva cancelada -> OperacionNoPermitidaError: Solo se confirma una reserva PENDIENTE (actual: CANCELADA).
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 14. Operación no permitida: confirmar una reserva cancelada
-2026-11-19 20:33:28 | INFO     | Reserva #15 creada (cliente=Luis Gómez, servicio=Sala Innovación, 2h)
-2026-11-19 20:33:28 | ERROR    | Reserva #15 no se pudo procesar: Debe confirmar la reserva antes de procesarla (actual: PENDIENTE).
-2026-11-19 20:33:28 | INFO     | Fin del intento de procesamiento de la reserva #15
-2026-11-19 20:33:28 | ERROR    | 15. Procesar una reserva sin confirmarla -> OperacionNoPermitidaError: Debe confirmar la reserva antes de procesarla (actual: PENDIENTE).
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 15. Procesar una reserva sin confirmarla
-2026-11-19 20:33:28 | ERROR    | 16. Cálculo inconsistente (descuento del 150 %) -> CalculoInconsistenteError: Descuento fuera de rango (0-1): 1.5
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 16. Cálculo inconsistente (descuento del 150 %)
-2026-11-19 20:33:28 | ERROR    | 17. Registrar un objeto que no es entidad del sistema -> ReservaError: No se puede registrar un objeto de tipo str.
-2026-11-19 20:33:28 | INFO     | Operación finalizada: 17. Registrar un objeto que no es entidad del sistema
-2026-11-19 20:33:28 | INFO     | === Fin de la simulación: el sistema siguió operativo ===
+2026-11-19 20:42:58 | INFO     | === Inicio de la simulación de Software FJ ===
+2026-11-19 20:42:58 | INFO     | Cliente registrado: Ana Pérez
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 1. Registrar cliente válido (Ana Pérez)
+2026-11-19 20:42:58 | INFO     | Cliente registrado: Luis Gómez
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 2. Registrar cliente válido (Luis Gómez)
+2026-11-19 20:42:58 | ERROR    | 3. Registrar cliente inválido (correo mal formado) -> ClienteInvalidoError: Correo inválido: 'carlos-sin-arroba'
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 3. Registrar cliente inválido (correo mal formado)
+2026-11-19 20:42:58 | ERROR    | 4. Registrar cliente con parámetros faltantes -> ParametroFaltanteError: Faltan parámetros del cliente: correo, telefono
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 4. Registrar cliente con parámetros faltantes
+2026-11-19 20:42:58 | ERROR    | 4b. Registrar cliente duplicado (mismo documento de Ana) -> ClienteDuplicadoError: Ya existe un cliente con el documento 1002345678.
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 4b. Registrar cliente duplicado (mismo documento de Ana)
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 5. Crear servicio válido: sala de juntas
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 6. Crear servicio válido: alquiler de portátil
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 7. Crear servicio válido: asesoría senior
+2026-11-19 20:42:58 | ERROR    | 8. Crear servicio inválido (tarifa negativa) -> ServicioInvalidoError: La tarifa por hora debe ser un número positivo.
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 8. Crear servicio inválido (tarifa negativa)
+2026-11-19 20:42:58 | ERROR    | 9. Crear servicio inválido (nivel de asesoría inexistente) -> ServicioInvalidoError: Nivel inválido 'maestro'. Use: junior, senior, experto.
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 9. Crear servicio inválido (nivel de asesoría inexistente)
+2026-11-19 20:42:58 | INFO     | Servicio registrado: Sala Innovación
+2026-11-19 20:42:58 | INFO     | Servicio registrado: Portátil Pro
+2026-11-19 20:42:58 | INFO     | Servicio registrado: Asesoría Cloud
+2026-11-19 20:42:58 | INFO     | Reserva #11 creada (cliente=Ana Pérez, servicio=Sala Innovación, 3h)
+2026-11-19 20:42:58 | INFO     | Reserva #11 confirmada
+2026-11-19 20:42:58 | INFO     | Reserva #11 procesada. Total: $205,275.00
+2026-11-19 20:42:58 | INFO     | Fin del intento de procesamiento de la reserva #11
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 10. Reserva exitosa: Ana reserva la sala 3 h
+2026-11-19 20:42:58 | INFO     | Reserva #12 creada (cliente=Luis Gómez, servicio=Asesoría Cloud, 2h)
+2026-11-19 20:42:58 | INFO     | Reserva #12 confirmada
+2026-11-19 20:42:58 | INFO     | Reserva #12 procesada. Total: $289,170.00
+2026-11-19 20:42:58 | INFO     | Fin del intento de procesamiento de la reserva #12
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 11. Reserva exitosa con 10 % de descuento: Luis, asesoría 2 h
+2026-11-19 20:42:58 | ERROR    | 12. Reserva fallida: duración fuera de rango (sala 12 h) -> ReservaError: No se pudo crear la reserva: Una sala se reserva entre 1 y 8 horas.
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 12. Reserva fallida: duración fuera de rango (sala 12 h)
+2026-11-19 20:42:58 | ERROR    | 13. Reserva fallida: servicio no disponible -> ServicioNoDisponibleError: El servicio 'Portátil Pro' no está disponible.
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 13. Reserva fallida: servicio no disponible
+2026-11-19 20:42:58 | INFO     | Reserva #15 creada (cliente=Ana Pérez, servicio=Portátil Pro, 24h)
+2026-11-19 20:42:58 | INFO     | Reserva #15 cancelada
+2026-11-19 20:42:58 | ERROR    | 14. Operación no permitida: confirmar una reserva cancelada -> OperacionNoPermitidaError: Solo se confirma una reserva PENDIENTE (actual: CANCELADA).
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 14. Operación no permitida: confirmar una reserva cancelada
+2026-11-19 20:42:58 | INFO     | Reserva #16 creada (cliente=Luis Gómez, servicio=Sala Innovación, 2h)
+2026-11-19 20:42:58 | ERROR    | Reserva #16 no se pudo procesar: Debe confirmar la reserva antes de procesarla (actual: PENDIENTE).
+2026-11-19 20:42:58 | INFO     | Fin del intento de procesamiento de la reserva #16
+2026-11-19 20:42:58 | ERROR    | 15. Procesar una reserva sin confirmarla -> OperacionNoPermitidaError: Debe confirmar la reserva antes de procesarla (actual: PENDIENTE).
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 15. Procesar una reserva sin confirmarla
+2026-11-19 20:42:58 | ERROR    | 16. Cálculo inconsistente (descuento del 150 %) -> CalculoInconsistenteError: Descuento fuera de rango (0-1): 1.5
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 16. Cálculo inconsistente (descuento del 150 %)
+2026-11-19 20:42:58 | ERROR    | 17. Registrar un objeto que no es entidad del sistema -> ReservaError: No se puede registrar un objeto de tipo str.
+2026-11-19 20:42:58 | INFO     | Operación finalizada: 17. Registrar un objeto que no es entidad del sistema
+2026-11-19 20:42:58 | INFO     | === Fin de la simulación: el sistema siguió operativo ===
