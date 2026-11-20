@@ -22,16 +22,18 @@ def main() -> None:
         return cliente
 
     ana = g.intentar("1. Registrar cliente válido (Ana Pérez)",
-                     lambda: registrar_cliente("ana pérez", "1002345678",
+                    lambda: registrar_cliente("ana pérez", "1002345678",
                                                "ana@correo.com", "3001234567"))
     luis = g.intentar("2. Registrar cliente válido (Luis Gómez)",
-                      lambda: registrar_cliente("Luis Gómez", "79456123",
+                    lambda: registrar_cliente("Luis Gómez", "79456123",
                                                 "luis.gomez@mail.co", "3109876543"))
     g.intentar("3. Registrar cliente inválido (correo mal formado)",
-               lambda: registrar_cliente("Carlos Ruiz", "123456789",
+                    lambda: registrar_cliente("Carlos Ruiz", "123456789",
                                          "carlos-sin-arroba", "3001112233"))
+    g.intentar("4. Registrar cliente con parámetros faltantes",
+                    lambda: registrar_cliente("Marta Díaz", "55667788"))                                     
     g.intentar("4b. Registrar cliente duplicado (mismo documento de Ana)",
-               lambda: registrar_cliente("Ana P", "1002345678",
+                    lambda: registrar_cliente("Ana P", "1002345678",
                                          "otra@correo.com", "3001234567"))
 
     # --- Servicios ---
