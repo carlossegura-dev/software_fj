@@ -3,7 +3,7 @@
 from functools import singledispatchmethod
 
 from cliente import Cliente
-from excepciones import ReservaError, SoftwareFJError
+from excepciones import ClienteDuplicadoError, ReservaError, SoftwareFJError
 from registro_logs import log
 from reserva import Reserva
 from servicios import Servicio
@@ -22,8 +22,19 @@ class GestorSoftwareFJ:
 
     @registrar.register
     def _(self, objeto: Cliente):
+        if self.buscar_cliente(objeto.documento):
+            raise ClienteDuplicadoError(
+                f"Ya existe un cliente con el documento {objeto.documento}.")
         self._clientes.append(objeto)
         log.info("Cliente registrado: %s", objeto.nombre)
+
+    def buscar_cliente(self, documento):
+        """Devuelve el cliente con ese documento, o None si no existe."""
+        documento = str(documento).strip()
+        for cliente in self._clientes:
+            if cliente.documento == documento:
+                return cliente
+        return None
 
     @registrar.register
     def _(self, objeto: Servicio):
